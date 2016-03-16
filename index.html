@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cs290d-final-project by hwright-ucsb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Black and White? A Lattice Analyzation of Police-Public Contact Survey Data</h1>
+
+      <h2 class="project-tagline">Final Project Documentation for CS290D: Network Science 202, W16</h2>
+      <h2 class="project-tagline">Lilla Bartko</h2>
+      <h2 class="project-tagline">Shadi Mohagheghi</h2>
+      <h2 class="project-tagline">Haleigh Wright</h2>
+      <a href="https://github.com/hwright-ucsb/CS290D-Final-Project" class="btn">View on GitHub</a>
+      <a href="https://github.com/hwright-ucsb/CS290D-Final-Project/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/hwright-ucsb/CS290D-Final-Project/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INTRODUCTION</h3>
+
+<p>TMEEP MEEP</p>
+
+<h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>METHODS</h3>
+
+<h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Source</h4>
+
+<p>To examine this idea we used raw data from the Police-Public Contact Survey (2011) conducted by the Bureau of Justice Statistics in 2011 {USDJ 2014} <a name="ref1">[1]</a>. This publication, a supplement to the National Crime Victimization Survey, examines nonfatal police/community relations. A representative national sample of U.S. residents aged 16 and over were asked about contacts with police during the twelve months prior to the survey date. The dataset contains over 62,000 individual cases and includes demographic data (race, sex, age, income, etc.) and 527 variables, with roughly half being about peoples’ interactions with police. For our project, we restricted our attention to data from the sixth survey: Police Behavior During Traffic and Street Stops (NCJ 242937), which covered police-citizen interactions and citizens’ perception of police. </p>
+
+<h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visualization of the Network</h4>
+
+<p>For Galois Lattice Analysis to work citizens must be classified into discrete, disjoint categories and police actions must be classified into clearly defined sets of attributes. To facilitate delimitation of these groups, we used the D3 JavaScript library <a name="ref2">[2]</a> in our first network visualization to display the connections between citizen’s race and their treatment by police officers. The nodes are of two types, the public (categories of citizens) and the police officer behavior (e.g. ticketing for speeding, threatening arrest), resulting in a bipartite graph. Links are weighted by the frequency of occurrence in the sample. Network Visualization 1 is visualization of a pilot sample drawn from the Street Stop Variable “Reason for Stopping: Suspect You of Something” (data not shown - there were not enough data points per group (n=77) for any meaningful analysis).  Because our data set is small, the network visualization did not illuminate novel strategies for categorizing the citizens or attributes beyond our initial impressions, nevertheless, this technique would be useful for clarifying relationships and delimiting sets in a dataset of much greater dimension and complexity.</p>
+
+<h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sampling Strategy</h4>
+
+<p>Galois lattice analysis requires a formal context, or representation of the data as intersecting sets of categories (e.g. white rural people) and attributes (e.g. reason for ticketing: speeding).  A good context requires discrete categories into which each citizen can be uniquely placed. We designed two contexts (category/attribute combinations). For the first context (RACE_PLACE), citizens were categorized by race (black or white) and by the population size of their place of residence (rural: less than 100,000; low-mid: 100,000 to 499,999; hi-mid: 500,000 to 999,999; metro: 1 million or more) for a total of eight distinct categories. A D3JS visualization was also made for this sample, Network Visualization 2. For the second context, (RACE_INCOME) citizens were classified by race (white or black) and by income (lo: less than $20,000; mid: $20,000 to $49,999; hi: $50,000 or more) for a total of six distinct categories.</p>
+
+<p>Sampling biases in the data set required that we determine the size of the smallest category and use that as the limiting sample size for the remaining categories of a context. In these cases, the least abundant categories were black people in high-mid population sized areas (n=581), and black people in the high-income group (n=1139), respectively. Random samples of the same size were extracted from the 2011 Traffic Stop Questionnaire for the remaining categories. </p>
+
+<h3>
+<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ANALYSIS AND RESULTS</h3>
+
+<h4>
+<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contexts</h4>
+
+<p>To create each context, the demographic categories were combined with an initial set of 72 attributes, including variables related to Reasons for Stopping (e.g. “seatbelt violation”), Reasons for Traffic Tickets (e.g. “speeding”), and Police Behavior (e.g. “threaten arrest”).  Counts for each attribute were extracted from each sample category using <a name="ref3">[3]</a> and <a name="ref4">[4]</a> for place and income respectively, and summarized in a spreadsheet. We examined those data and removed all attributes that had a count of “0” for every category in that context (e.g. “reason for stopping: blocking traffic”). This reduced our working sample set of attributes.
+</p>
+
+<p>We used the software LatticeMiner 1.4 <a name="ref5">[5]</a>, a data mining prototype for Formal Concept Analysis (FCA) that performs creation, visualization, and exploration of Galois lattices. To use LatticeMiner, the user creates a new context by transforming the extracted count data into a binary representation of presence or absence of an intersection between categories and attributes. The software generates a lattice representation of the context. Both the context and the display can be manipulated to explore relationships within the context.
+</p>
+
+<p>For this analysis we chose to omit attributes detailing reasons for stopping or ticketing and focus on the ten (Race_Place) or fourteen (Race_Income) attributes defining a spectrum of officer behaviors varying in levels of displayed and/or perceived aggression, force, or emotional content (e.g. “asked permission to search car,” “shouting,” “cursing,” “threatening to arrest”). Figure A and B, pictured below, show the contexts for Race_Place and Race_Income respectively.
+</p>
+
+<img src="RACE_PLACE_CONTEXT.png" alt="Race_Place_Context" width="709" height="311">
+<p><b>Figure A.</b> Race_Place Context</p>
+<img src="RACE_INCOME_BEHAVIOR_CONTEXT.png" alt="Race_Income_Context" width="561" height="271">
+<p><b>Figure B.</b> Race_Income Context</p>
+
+<h4>
+<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Galois Lattice and Visualization</h4>
+
+<img src="RACE_PLACE (Fig B).png" alt="Race_Place_Lattice" width="561" height="271">
+<p><b>Figure C.</b> Race_Place Galois Lattice with reduced/minimal labelling, meaning "a category is labeled at its highest occurence, [and] a practice is labeled at its lowest occurence" <a name="ref7">[7]</a>.</p>
+
+<p>Figure C displays the results of analyzing the Race_Place context. Nodes represent the intersection of categories and attributes and are referred to as a “concept” in the literature; the shading of the concepts, in this representation, indicates the abundance of attributes.  The uppermost, unlabeled node is the set of all categories (eight demographic groups in this case); the lowest node is the set of all attributes (ten distinct police behaviors). These two nodes are “empty,” i.e. there were no instances in which every category intersected with every attribute (top), nor did every attribute intersect with every category (bottom). The lattice is a line diagram that joins concepts and can be organized to represent a hierarchy of sets of increasingly/decreasingly-shared attributes. The information from the context can be read from the line diagram following the “reading rule,” summarized as follows <a name="ref6">[6]</a>:
+  <blockquote>
+  An object <i>g</i> has an attribute <i>m</i> if and only if there is an upwards-leading path from the node (concept) named by <i>“g”</i> to the node named by <i>“m.”</i></blockquote>
+  </p>
+
+<p>With eight categories and ten attributes, Figure C looks difficult to interpret, but one main result is that the attribute of “pointing a gun” is only associated with the category “black lo mid;” the take away message here is that in this data set, only black people from populations between 100,000-499,999 people reported having guns pointed at them. Figure D displays the lattice of the concept Race_Income; notice the reduction of two categories renders our task of reading easier. Starting at the bottom-most concept, which in this case, is not empty, we read up the line diagram from fewest-number of attributes to the most. Here we see that every category of person in this analysis reported having had their car searched and being subject to arrest threats. Moving up the diagram, two lines emerge from the basal concept, leading on the right to the first appearance of the attribute “Point Gun” in the “black high income” category. This attribute appears a second time in the concept above it, the “black mid income” category, and nowhere else on the line diagram. 
+</p>
+
+<img src="RACE_INCOME_BEHAVIOR.png" alt="Race_Income_Lattice" width="447" height="522">
+<p><b>Figure D.</b> Race_Income Galois Lattice with reduced/minimal labelling</p>
+
+<p>The consistency of this result with that of the RACE_PLACE context is tantalizing, and at the least, hints at directions for future work. Exploration of this topic was limited by time and by the characteristics of the data set, which was selected, but not designed, for this study. Among many of the shortcomings of this data set, it is only a (self) report of one side of the picture, the public. Including data from the perspective of the officers might flesh out a clearer yet more nuanced picture of the structural relationships between perceptions and behaviors of police and the public. One can only hope that this foray into Galois Lattice Analysis ignites a spark of interest in some ambitious graduate student adept at questionnaire design and ethnographic interviews.
+</p>
+
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
+
+<p>MEEP MEEP</p>
+
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/hwright-ucsb/CS290D-Final-Project">Cs290d-final-project</a> is maintained by <a href="https://github.com/hwright-ucsb">hwright-ucsb</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
