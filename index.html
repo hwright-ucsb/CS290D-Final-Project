@@ -34,12 +34,12 @@
 <h4>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Source</h4>
 
-<p>To examine this idea we used raw data from the Police-Public Contact Survey (2011) conducted by the Bureau of Justice Statistics in 2011 {USDJ 2014} <a name="ref1">[1]</a>. This publication, a supplement to the National Crime Victimization Survey, examines nonfatal police/community relations. A representative national sample of U.S. residents aged 16 and over were asked about contacts with police during the twelve months prior to the survey date. The dataset contains over 62,000 individual cases and includes demographic data (race, sex, age, income, etc.) and 527 variables, with roughly half being about peoples’ interactions with police. For our project, we restricted our attention to data from the sixth survey: Police Behavior During Traffic and Street Stops (NCJ 242937), which covered police-citizen interactions and citizens’ perception of police. </p>
+<p>To examine this idea we used raw data from the Police-Public Contact Survey (2011) conducted by the Bureau of Justice Statistics in 2011 {USDJ 2014} <a href="#ref1">[1]</a>. This publication, a supplement to the National Crime Victimization Survey, examines nonfatal police/community relations. A representative national sample of U.S. residents aged 16 and over were asked about contacts with police during the twelve months prior to the survey date. The dataset contains over 62,000 individual cases and includes demographic data (race, sex, age, income, etc.) and 527 variables, with roughly half being about peoples’ interactions with police. For our project, we restricted our attention to data from the sixth survey: Police Behavior During Traffic and Street Stops (NCJ 242937), which covered police-citizen interactions and citizens’ perception of police. </p>
 
 <h4>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visualization of the Network</h4>
 
-<p>For Galois Lattice Analysis to work citizens must be classified into discrete, disjoint categories and police actions must be classified into clearly defined sets of attributes. To facilitate delimitation of these groups, we used the D3 JavaScript library <a name="ref2">[2]</a> in our first network visualization to display the connections between citizen’s race and their treatment by police officers. The nodes are of two types, the public (categories of citizens) and the police officer behavior (e.g. ticketing for speeding, threatening arrest), resulting in a bipartite graph. Links are weighted by the frequency of occurrence in the sample. Network Visualization 1 is visualization of a pilot sample drawn from the Street Stop Variable “Reason for Stopping: Suspect You of Something” (data not shown - there were not enough data points per group (n=77) for any meaningful analysis).  Because our data set is small, the network visualization did not illuminate novel strategies for categorizing the citizens or attributes beyond our initial impressions, nevertheless, this technique would be useful for clarifying relationships and delimiting sets in a dataset of much greater dimension and complexity.</p>
+<p>For Galois Lattice Analysis to work citizens must be classified into discrete, disjoint categories and police actions must be classified into clearly defined sets of attributes. To facilitate delimitation of these groups, we used the D3 JavaScript library <a href="#ref2">[2]</a> in our first network visualization to display the connections between citizen’s race and their treatment by police officers. The nodes are of two types, the public (categories of citizens) and the police officer behavior (e.g. ticketing for speeding, threatening arrest), resulting in a bipartite graph. Links are weighted by the frequency of occurrence in the sample. Network Visualization 1 is visualization of a pilot sample drawn from the Street Stop Variable “Reason for Stopping: Suspect You of Something” (data not shown - there were not enough data points per group (n=77) for any meaningful analysis).  Because our data set is small, the network visualization did not illuminate novel strategies for categorizing the citizens or attributes beyond our initial impressions, nevertheless, this technique would be useful for clarifying relationships and delimiting sets in a dataset of much greater dimension and complexity.</p>
 
 <h4>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sampling Strategy</h4>
@@ -54,10 +54,10 @@
 <h4>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contexts</h4>
 
-<p>To create each context, the demographic categories were combined with an initial set of 72 attributes, including variables related to Reasons for Stopping (e.g. “seatbelt violation”), Reasons for Traffic Tickets (e.g. “speeding”), and Police Behavior (e.g. “threaten arrest”).  Counts for each attribute were extracted from each sample category using <a name="ref3">[3]</a> and <a name="ref4">[4]</a> for place and income respectively, and summarized in a spreadsheet. We examined those data and removed all attributes that had a count of “0” for every category in that context (e.g. “reason for stopping: blocking traffic”). This reduced our working sample set of attributes.
+<p>To create each context, the demographic categories were combined with an initial set of 72 attributes, including variables related to Reasons for Stopping (e.g. “seatbelt violation”), Reasons for Traffic Tickets (e.g. “speeding”), and Police Behavior (e.g. “threaten arrest”).  Counts for each attribute were extracted from each sample category using <a href="#ref3">[3]</a> and <a href="#ref4">[4]</a> for place and income respectively, and summarized in a spreadsheet. We examined those data and removed all attributes that had a count of “0” for every category in that context (e.g. “reason for stopping: blocking traffic”). This reduced our working sample set of attributes.
 </p>
 
-<p>We used the software LatticeMiner 1.4 <a name="ref5">[5]</a>, a data mining prototype for Formal Concept Analysis (FCA) that performs creation, visualization, and exploration of Galois lattices. To use LatticeMiner, the user creates a new context by transforming the extracted count data into a binary representation of presence or absence of an intersection between categories and attributes. The software generates a lattice representation of the context. Both the context and the display can be manipulated to explore relationships within the context.
+<p>We used the software LatticeMiner 1.4 <a href="#ref5">[5]</a>, a data mining prototype for Formal Concept Analysis (FCA) that performs creation, visualization, and exploration of Galois lattices. To use LatticeMiner, the user creates a new context by transforming the extracted count data into a binary representation of presence or absence of an intersection between categories and attributes. The software generates a lattice representation of the context. Both the context and the display can be manipulated to explore relationships within the context.
 </p>
 
 <p>For this analysis we chose to omit attributes detailing reasons for stopping or ticketing and focus on the ten (Race_Place) or fourteen (Race_Income) attributes defining a spectrum of officer behaviors varying in levels of displayed and/or perceived aggression, force, or emotional content (e.g. “asked permission to search car,” “shouting,” “cursing,” “threatening to arrest”). Figure A and B, pictured below, show the contexts for Race_Place and Race_Income respectively.
@@ -71,10 +71,10 @@
 <h4>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Galois Lattice and Visualization</h4>
 
-<img src="RACE_PLACE (Fig B).png" alt="Race_Place_Lattice" width="561" height="271">
-<p><b>Figure C.</b> Race_Place Galois Lattice with reduced/minimal labelling, meaning "a category is labeled at its highest occurence, [and] a practice is labeled at its lowest occurence" <a name="ref7">[7]</a>.</p>
+<img src="RACE_PLACE (Fig B).png" alt="Race_Place_Lattice" width="916" height="586">
+<p><b>Figure C.</b> Race_Place Galois Lattice with reduced/minimal labelling, meaning "a category is labeled at its highest occurence, [and] a practice is labeled at its lowest occurence" <a href="#ref7">[7]</a>.</p>
 
-<p>Figure C displays the results of analyzing the Race_Place context. Nodes represent the intersection of categories and attributes and are referred to as a “concept” in the literature; the shading of the concepts, in this representation, indicates the abundance of attributes.  The uppermost, unlabeled node is the set of all categories (eight demographic groups in this case); the lowest node is the set of all attributes (ten distinct police behaviors). These two nodes are “empty,” i.e. there were no instances in which every category intersected with every attribute (top), nor did every attribute intersect with every category (bottom). The lattice is a line diagram that joins concepts and can be organized to represent a hierarchy of sets of increasingly/decreasingly-shared attributes. The information from the context can be read from the line diagram following the “reading rule,” summarized as follows <a name="ref6">[6]</a>:
+<p>Figure C displays the results of analyzing the Race_Place context. Nodes represent the intersection of categories and attributes and are referred to as a “concept” in the literature; the shading of the concepts, in this representation, indicates the abundance of attributes.  The uppermost, unlabeled node is the set of all categories (eight demographic groups in this case); the lowest node is the set of all attributes (ten distinct police behaviors). These two nodes are “empty,” i.e. there were no instances in which every category intersected with every attribute (top), nor did every attribute intersect with every category (bottom). The lattice is a line diagram that joins concepts and can be organized to represent a hierarchy of sets of increasingly/decreasingly-shared attributes. The information from the context can be read from the line diagram following the “reading rule,” summarized as follows <a href="#ref6">[6]</a>:
   <blockquote>
   An object <i>g</i> has an attribute <i>m</i> if and only if there is an upwards-leading path from the node (concept) named by <i>“g”</i> to the node named by <i>“m.”</i></blockquote>
   </p>
@@ -92,7 +92,20 @@
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
 
-<p>MEEP MEEP</p>
+<p><a name="ref1">[1]</a> United States Department of Justice. Office of Justice Programs. Bureau of Justice Statistics. Police-Public Contact Survey, 2011. ICPSR34276-v1. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2014-03-18. http://doi.org/10.3886/ICPSR34276.v1</p>
+
+<p><a name="ref2">[2]</a> D3.js. D3JS.org</p>
+
+<p><a name="ref3">[3]</a> place_cnt_ones.m</p>
+
+<p><a name="ref4">[4]</a> income_cnt_ones.m</p>
+
+<p><a name="ref5">[5]</a> LatticeMiner 1.4, Company: Laboratoire LARIM (<a href="http://larim.uqo.ca">http://larim.uqo.ca</a>) Universite du Quebec en Outaouais (UQO) – Canada<p>
+
+<p><a name="ref6">[6]</a> Wolff, K. E. (1993). A first course in formal concept analysis. StatSoft, 93, 429-438.</p>
+
+<p><a name="ref7">[7]</a> Mohr, J. W., &amp; Duquenne, V. (1997). The duality of culture and practice: Poverty relief in New York City, 1888--1917. Theory and society, 26(2), 305-356.</p>
+
 
 
       <footer class="site-footer">
