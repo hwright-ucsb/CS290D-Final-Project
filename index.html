@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Cs290d-final-project by hwright-ucsb</title>
+    <title>Black and White? A Lattice Analyzation of Police-Public Contact Survey Data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -14,9 +14,7 @@
       <h1 class="project-name">Black and White? A Lattice Analyzation of Police-Public Contact Survey Data</h1>
 
       <h2 class="project-tagline">Final Project Documentation for CS290D: Network Science 202, W16</h2>
-      <h2 class="project-tagline">Lilla Bartko</h2>
-      <h2 class="project-tagline">Shadi Mohagheghi</h2>
-      <h2 class="project-tagline">Haleigh Wright</h2>
+      <h2 class="project-tagline"><i>Lilla Bartko, Shadi Mohagheghi, &amp; Haleigh Wright</i></h2>
       <a href="https://github.com/hwright-ucsb/CS290D-Final-Project" class="btn">View on GitHub</a>
       <a href="https://github.com/hwright-ucsb/CS290D-Final-Project/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/hwright-ucsb/CS290D-Final-Project/tarball/master" class="btn">Download .tar.gz</a>
@@ -39,12 +37,15 @@
 <h4>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visualization of the Network</h4>
 
-<p>For Galois Lattice Analysis to work citizens must be classified into discrete, disjoint categories and police actions must be classified into clearly defined sets of attributes. To facilitate delimitation of these groups, we used the D3 JavaScript library <a href="#ref2">[2]</a> in our first network visualization to display the connections between citizen’s race and their treatment by police officers. The nodes are of two types, the public (categories of citizens) and the police officer behavior (e.g. ticketing for speeding, threatening arrest), resulting in a bipartite graph. Links are weighted by the frequency of occurrence in the sample. Network Visualization 1 is visualization of a pilot sample drawn from the Street Stop Variable “Reason for Stopping: Suspect You of Something” (data not shown - there were not enough data points per group (n=77) for any meaningful analysis).  Because our data set is small, the network visualization did not illuminate novel strategies for categorizing the citizens or attributes beyond our initial impressions, nevertheless, this technique would be useful for clarifying relationships and delimiting sets in a dataset of much greater dimension and complexity. Scroll down or click <a href="embeddings">here</a> to view D3JS Network Visualizations 1 and 2.</p>
+<p>For Galois Lattice Analysis to work citizens must be classified into discrete, disjoint categories and police actions must be classified into clearly defined sets of attributes. To facilitate delimitation of these groups, we used the D3 JavaScript library <a href="#ref2">[2]</a> in our first network visualization to display the connections between citizen’s race and their treatment by police officers. The nodes are of two types, the public (categories of citizens) and the police officer behavior (e.g. ticketing for speeding, threatening arrest), resulting in a bipartite graph. Links are weighted by the frequency of occurrence in the sample. <a href="http://bl.ocks.org/hwright-ucsb/e763a0c6fce444aa7fad">Network Visualization 1</a> is visualization of a pilot sample drawn from the Street Stop Variable “Reason for Stopping: Suspect You of Something” (data not shown - there were not enough data points per group (n=77) for any meaningful analysis).  Because our data set is small, the network visualization did not illuminate novel strategies for categorizing the citizens or attributes beyond our initial impressions, nevertheless, this technique would be useful for clarifying relationships and delimiting sets in a dataset of much greater dimension and complexity.</p>
+
+<h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b>Click <a href="http://bl.ocks.org/hwright-ucsb">here</a> to view D3JS Network Visualizations.</b></h4>
 
 <h4>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sampling Strategy</h4>
 
-<p>Galois lattice analysis requires a formal context, or representation of the data as intersecting sets of categories (e.g. white rural people) and attributes (e.g. reason for ticketing: speeding).  A good context requires discrete categories into which each citizen can be uniquely placed. We designed two contexts (category/attribute combinations). For the first context (RACE_PLACE), citizens were categorized by race (black or white) and by the population size of their place of residence (rural: less than 100,000; low-mid: 100,000 to 499,999; hi-mid: 500,000 to 999,999; metro: 1 million or more) for a total of eight distinct categories. A D3JS visualization was also made for this sample, Network Visualization 2. For the second context, (RACE_INCOME) citizens were classified by race (white or black) and by income (lo: less than $20,000; mid: $20,000 to $49,999; hi: $50,000 or more) for a total of six distinct categories.</p>
+<p>Galois lattice analysis requires a formal context, or representation of the data as intersecting sets of categories (e.g. white rural people) and attributes (e.g. reason for ticketing: speeding).  A good context requires discrete categories into which each citizen can be uniquely placed. We designed two contexts (category/attribute combinations). For the first context (RACE_PLACE), citizens were categorized by race (black or white) and by the population size of their place of residence (rural: less than 100,000; low-mid: 100,000 to 499,999; hi-mid: 500,000 to 999,999; metro: 1 million or more) for a total of eight distinct categories. A D3JS visualization was also made for this sample, <a href="http://bl.ocks.org/hwright-ucsb/5759660ba5db339ccf5e">Network Visualization 2</a>. For the second context, (RACE_INCOME) citizens were classified by race (white or black) and by income (lo: less than $20,000; mid: $20,000 to $49,999; hi: $50,000 or more) for a total of six distinct categories.</p>
 
 <p>Sampling biases in the data set required that we determine the size of the smallest category and use that as the limiting sample size for the remaining categories of a context. In these cases, the least abundant categories were black people in high-mid population sized areas (n=581), and black people in the high-income group (n=1139), respectively. Random samples of the same size were extracted from the 2011 Traffic Stop Questionnaire for the remaining categories. </p>
 
@@ -88,12 +89,6 @@
 <p>The consistency of this result with that of the RACE_PLACE context is tantalizing, and at the least, hints at directions for future work. Exploration of this topic was limited by time and by the characteristics of the data set, which was selected, but not designed, for this study. Among many of the shortcomings of this data set, it is only a (self) report of one side of the picture, the public. Including data from the perspective of the officers might flesh out a clearer yet more nuanced picture of the structural relationships between perceptions and behaviors of police and the public. One can only hope that this foray into Galois Lattice Analysis ignites a spark of interest in some ambitious graduate student adept at questionnaire design and ethnographic interviews.
 </p>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>D3JS NETWORK VISUALIZATIONS</h3>
-
-<iframe sandbox="allow-scripts allow-forms allow-same-origin" src="http://bl.ocks.org/hwright-ucsb/raw/5759660ba5db339ccf5e/7121aeb26d780a0b28c51aeade3d25719a09d86f/" marginwidth="0" marginheight="0" style="height:500px;" scrolling="no"></iframe>
-
-<iframe sandbox="allow-scripts allow-forms allow-same-origin" src="http://bl.ocks.org/hwright-ucsb/raw/e763a0c6fce444aa7fad/dcb9b07fcbce84422ab269edea2bafbe6137675a/" marginwidth="0" marginheight="0" style="height:500px;" scrolling="no"></iframe>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
