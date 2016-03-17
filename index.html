@@ -24,7 +24,26 @@
       <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INTRODUCTION</h3>
 
-<p>TMEEP MEEP</p>
+<h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Motivation</h4>
+
+<p>Since the fatal police shooting of 18-year-old Michael Brown in Ferguson, Missouri eighteen months ago, a slew of additional fatal police shootings of black males has generated numerous protests accusing law enforcement officers of excessive use of deadly force against unarmed African Americans. These series of highly publicized lethal interactions perpetrated by police on young black American males have galvanized a social justice movement. African American males between the ages of 15-34 make up only 2% of the US population yet a <a href="http://www.alternet.org/civil-liberties/young-black-men-killed-us-police-highest-rate-year-1134-deaths">recently completed study</a> shows that they have comprised more than 15% of all deaths logged in 2015 by an ongoing investigation into the use of deadly force by police. Their rate of police-involved deaths was five times higher than for white men of the same age <a href="#ref8">[8]</a>. According to <a href="http://www.mappingpoliceviolence.org">mappingpoliceviolence.org</a>, police killed at least 336 black people in the U.S. in 2015.</p>
+<p>Responding to police allegations compiled in <a href="#ref8">[8]</a>, Associate professor of criminology at the University of Missouri-St. Louis David Klinger claims, “It would appear that police officers are often confronting people who are armed, non-compliant, and threatening”, nevertheless, 14% of lethal events transpired after a traffic or street stop and 7% occurred after a non-violent crime. Only recently (July 1, 2015), the Washington Post began publishing a database of fatal police shootings <a href="#ref8">[8]</a>.</p>
+<p>This has generated the public’s hypervigilance of police-public interactions and has motivated investigating the presence of systematic racial bias on the part of law enforcement officers and its relationship to their behavior.
+If we trust the decals on the St. Louis iMetropolitan police vehicles, the general motto of law enforcement is, with some variation, “To Protect And Serve”. But what, exactly, does this mean, and how is “protection and service” perceived, understood, and manifested by both police officers and the public? 
+</p>
+
+<h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Question</h4>
+
+<p>The aforementioned events have generated official recordings of police accounts and allegations, and have lead some scholars to conclude that lethal force is often the response of law enforcement to armed, noncompliant, or threatening individuals. But what is the perception of the public? Is there discord between the idea of protection and service and the actual implementation of protection and service in our society? Digging a little deeper the more insidious underlying question emerges:</p>
+
+<div class="boxed">To what extent may systematic biases held by police officers inform their selection of protection and/or service actions? </div>
+
+<p>And how is police behavior perceived and understood by the public they serve?
+Here we consider a system where the practices inhere from the beliefs of the individuals utilizing them. Beliefs and practices often occur in duality. An excellent, proven tool for exploring and illustrating the structure of relational meanings is Galois Lattice Analysis, a type of Formal Concept Analysis (FCA) (interested readers with little mathematical background are directed to a cogent general introduction in <a href="#ref6">[6]</a>; for a detailed, more formal treatment see <a href="#ref9">[9]</a> or <a href="#ref7">[7]</a>). In summary, the method considers discrete categories of actors and events and, by identifying shared elements and intersections, creates a hierarchy of partially ordered sets. This hierarchy illustrates and identifies structural relationships (“concepts”) between actors and events, among actors, and among events.</p>
+<p>As mentioned in <a href="#ref7">[7]</a>, Galois lattice’s special property, which makes it a useful tool for this study, is its ability to represent two orders of information in the same drawing such that every point contains information on both logical orders simultaneously, connecting them visually for a more informed understanding of the data.</p>
+
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>METHODS</h3>
@@ -40,7 +59,8 @@
 <p>For Galois Lattice Analysis to work citizens must be classified into discrete, disjoint categories and police actions must be classified into clearly defined sets of attributes. To facilitate delimitation of these groups, we used the D3 JavaScript library <a href="#ref2">[2]</a> in our first network visualization to display the connections between citizen’s race and their treatment by police officers. The nodes are of two types, the public (categories of citizens) and the police officer behavior (e.g. ticketing for speeding, threatening arrest), resulting in a bipartite graph. Links are weighted by the frequency of occurrence in the sample. <a href="http://bl.ocks.org/hwright-ucsb/e763a0c6fce444aa7fad">Network Visualization 1</a> is visualization of a pilot sample drawn from the Street Stop Variable “Reason for Stopping: Suspect You of Something” (data not shown - there were not enough data points per group (n=77) for any meaningful analysis).  Because our data set is small, the network visualization did not illuminate novel strategies for categorizing the citizens or attributes beyond our initial impressions, nevertheless, this technique would be useful for clarifying relationships and delimiting sets in a dataset of much greater dimension and complexity.</p>
 
 <h4>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b>Click <a href="http://bl.ocks.org/hwright-ucsb">here</a> to view D3JS Network Visualizations.</b></h4>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>D3JS Network Visualizations</h4>
+<a href="http://bl.ocks.org/hwright-ucsb/e763a0c6fce444aa7fad" class="btn">Race: Suspect of Something</a> <a href="http://bl.ocks.org/hwright-ucsb/5759660ba5db339ccf5e" class="btn">Race and Place</a>
 
 <h4>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sampling Strategy</h4>
@@ -86,7 +106,7 @@
 <img src="RACE_INCOME_BEHAVIOR.png" alt="Race_Income_Lattice" width="447" height="522">
 <p><b>Figure D.</b> Race_Income Galois Lattice with reduced/minimal labelling</p>
 
-<p>The consistency of this result with that of the RACE_PLACE context is tantalizing, and at the least, hints at directions for future work. Exploration of this topic was limited by time and by the characteristics of the data set, which was selected, but not designed, for this study. Among many of the shortcomings of this data set, it is only a (self) report of one side of the picture, the public. Including data from the perspective of the officers might flesh out a clearer yet more nuanced picture of the structural relationships between perceptions and behaviors of police and the public. One can only hope that this foray into Galois Lattice Analysis ignites a spark of interest in some ambitious graduate student adept at questionnaire design and ethnographic interviews.
+<p>The consistency of this result with that of the RACE_PLACE context is tantalizing, and at the least, hints at directions for future work. Exploration of this topic was limited by time and by the characteristics of the data set, which was selected, but not designed, for this study. Among many of the shortcomings of this data set, it is only a (self) report of one side of the picture, the public. Including data from the perspective of the officers might flesh out a clearer yet more nuanced picture of the structural relationships between perceptions and behaviors of police and the public. It might be interesting to model a study following the example of <a href="#ref10">[10]</a>, an approach to measuring and evaluating social meaning variables comprising qualitative interviews and correspondence analysis. One can only hope that this foray into Galois Lattice Analysis ignites a spark of interest in some ambitious graduate student adept at questionnaire design and ethnographic interviews.
 </p>
 
 
@@ -107,6 +127,11 @@
 
 <p><a name="ref7">[7]</a> Mohr, J. W., &amp; Duquenne, V. (1997). The duality of culture and practice: Poverty relief in New York City, 1888--1917. Theory and society, 26(2), 305-356.</p>
 
+<p><a name="ref8">[8]</a>Jon Swaine , Oliver Laughland, James Lartey, Ciara McCarthy / The Guardian January 2, 2016</p>
+
+<p><a name="ref9">[9]</a>Freeman, L. C., &amp; White, D. R. (1993). Using Galois lattices to represent network data. Sociological methodology, 23(127), U146.</p>
+
+<p><a name="ref10">[10]</a>Harcourt, B. E. (2002). Measured interpretation: introducing the method of correspondence analysis to legal studies. U. Ill. L. Rev., 979.</p>
 
 
       <footer class="site-footer">
